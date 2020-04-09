@@ -30,8 +30,8 @@ class Solution:
             if l2:
                 sum = sum + l2.val
                 l2 = l2.next                # update l2 node
-            node.next = ListNode(sum % 10 + carry)
-            carry = sum // 10               # carry for the next loop
+            node.next = ListNode((sum + carry) % 10)
+            carry = (sum + carry) // 10               # carry for the next loop
             node = node.next                # update the node
         if carry > 0:       
             node.next = ListNode(1)         # if the last addition carry 1, need to add a node at the end of the list
