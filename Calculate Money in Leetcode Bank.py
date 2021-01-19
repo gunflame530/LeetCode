@@ -27,10 +27,11 @@ Answer:
 
 class Solution:
     def totalMoney(self, n: int) -> int:
-        weeks = math.floor(n/7) + 1
+        weeks = math.floor(n/7)
         days = n % 7
         money = 0
         for i in range(weeks):
-            for j in range(days):
-                money = money + i + j + 1
+            money += 28 + 7*i
+
+        money += int(weeks*days + days*days/2 + days/2)
         return money
