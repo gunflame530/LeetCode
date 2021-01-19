@@ -45,7 +45,7 @@ class Solution:
             num = 1
             for i in range(n, n-c, -1):
                 num = num*i
-            for i in range(1, c):
+            for i in range(1, c+1):
                 num = num/i
             return num
 
@@ -56,4 +56,4 @@ class Solution:
             for j in range(n):
                 if i*n + j*n - i*j == k:
                     res += func(n,i) * func(n,j)
-        return res
+        return int(res)
